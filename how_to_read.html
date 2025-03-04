@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>mindspark</title>
-                <meta name="robots" content="noindex" />
+        <title>如何读论文 - mindspark</title>
                 
 
         <!-- Custom HTML head -->
@@ -83,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="how_to_read.html"><strong aria-hidden="true">1.</strong> 如何读论文</a></li><li class="chapter-item expanded "><a href="benchmarks/index.html"><strong aria-hidden="true">2.</strong> Benchmark</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="benchmarks/snb-interactive.html"><strong aria-hidden="true">2.1.</strong> SNB Interactive</a></li><li class="chapter-item expanded "><a href="benchmarks/snb-bi.html"><strong aria-hidden="true">2.2.</strong> SNB BI</a></li><li class="chapter-item expanded "><a href="benchmarks/linkbench.html"><strong aria-hidden="true">2.3.</strong> LinkBench</a></li></ol></li><li class="chapter-item expanded "><a href="graph/index.html"><strong aria-hidden="true">3.</strong> Graph</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/graph-database.html"><strong aria-hidden="true">3.1.</strong> Graph Database</a></li><li class="chapter-item expanded "><a href="graph/graph-processing.html"><strong aria-hidden="true">3.2.</strong> Graph Processing</a></li></ol></li><li class="chapter-item expanded "><a href="olap/index.html"><strong aria-hidden="true">4.</strong> OLAP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="olap/morsel_driven_paral.html"><strong aria-hidden="true">4.1.</strong> Morsel-driven parallelism</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="how_to_read.html" class="active"><strong aria-hidden="true">1.</strong> 如何读论文</a></li><li class="chapter-item expanded "><a href="benchmarks/index.html"><strong aria-hidden="true">2.</strong> Benchmark</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="benchmarks/snb-interactive.html"><strong aria-hidden="true">2.1.</strong> SNB Interactive</a></li><li class="chapter-item expanded "><a href="benchmarks/snb-bi.html"><strong aria-hidden="true">2.2.</strong> SNB BI</a></li><li class="chapter-item expanded "><a href="benchmarks/linkbench.html"><strong aria-hidden="true">2.3.</strong> LinkBench</a></li></ol></li><li class="chapter-item expanded "><a href="graph/index.html"><strong aria-hidden="true">3.</strong> Graph</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/graph-database.html"><strong aria-hidden="true">3.1.</strong> Graph Database</a></li><li class="chapter-item expanded "><a href="graph/graph-processing.html"><strong aria-hidden="true">3.2.</strong> Graph Processing</a></li></ol></li><li class="chapter-item expanded "><a href="olap/index.html"><strong aria-hidden="true">4.</strong> OLAP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="olap/morsel_driven_paral.html"><strong aria-hidden="true">4.1.</strong> Morsel-driven parallelism</a></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -166,82 +165,15 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="benchmark"><a class="header" href="#benchmark">Benchmark</a></h1>
-<p>这是Benchmark的Sub-Directory</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="snb-interactive"><a class="header" href="#snb-interactive">SNB Interactive</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="snb-bi"><a class="header" href="#snb-bi">SNB BI</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linkbench"><a class="header" href="#linkbench">LinkBench</a></h1>
-<blockquote>
-<p>https://dl.acm.org/doi/pdf/10.1145/2463676.2465296</p>
-</blockquote>
-<h2 id="facebook的真实场景"><a class="header" href="#facebook的真实场景">Facebook的真实场景</a></h2>
-<p>数据: schema、属性的分布、数据分布</p>
-<p>query &amp; operation mix：</p>
-<ul>
-<li>query类型</li>
-<li>读写比例：
-<ul>
-<li>2.19:1 read:write</li>
-<li>3.19:1 association queries:association range query</li>
-<li>Actually 40.8 rows read per row written</li>
-</ul>
-</li>
-</ul>
-<h2 id="benchmark设计"><a class="header" href="#benchmark设计">Benchmark设计</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="graph"><a class="header" href="#graph">Graph</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="graph-database"><a class="header" href="#graph-database">Graph Database</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="graph-processing"><a class="header" href="#graph-processing">Graph Processing</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="olap类论文"><a class="header" href="#olap类论文">OLAP类论文</a></h1>
-<ul>
-<li><a href="olap/./morsel_driven_paral.html">Morsel-driven parallelism</a></li>
-</ul>
-<h1 id="olap类技术博客"><a class="header" href="#olap类技术博客">OLAP类技术博客</a></h1>
-<h2 id="execution-engine设计"><a class="header" href="#execution-engine设计">Execution Engine设计</a></h2>
-<p>TiDB提供了很多不错的设计介绍:</p>
-<ul>
-<li><a href="https://pingcap.github.io/tidb-dev-guide/understand-tidb/execution.html">如何设计Plan的执行引擎</a>: 火山模型、向量化执行
-的Idea、chunk的设计</li>
-<li><a href="https://pingcap.github.io/tidb-dev-guide/understand-tidb/implementation-of-vectorized-execution.html">向量化执行</a>: 基于apache arrow定义的chunk来实现列式内存表示，然后进行向量化计算，由于减少了内存访问和解释执行的开销，因此性能有所提
-升。文中给了一个例子。</li>
-<li><a href="https://pingcap.github.io/tidb-dev-guide/understand-tidb/parallel-execution-framework.html">并行执行框架</a>: TODO</li>
-<li><a href="https://docs.pingcap.com/tidb/stable/tiflash-pipeline-model/">Pipeline执行框架</a>: 找到pipeline breaker operator然后拆分为pipeline，然后并行执行</li>
-<li><a href="https://fuzhe1989.github.io/2022/04/17/tiflash-executor-thread-model/">TiFlash执行器线程模型</a>:</li>
-</ul>
-<h2 id="并行化执行"><a class="header" href="#并行化执行">并行化执行</a></h2>
-<ul>
-<li><a href="https://dsdsd.da.cwi.nl/slides/dsdsd-duckdb-push-based-execution.pdf">DuckDB Push-Based Execution</a>
-<ul>
-<li>Pipeline并行？</li>
-</ul>
-</li>
-</ul>
-<h2 id="ap场景下的事务"><a class="header" href="#ap场景下的事务">AP场景下的事务</a></h2>
-<h3 id="duckdb为何支持事务"><a class="header" href="#duckdb为何支持事务">DuckDB为何支持事务</a></h3>
-<p><a href="https://duckdb.org/2024/09/25/changing-data-with-confidence-and-acid.html">Changing Data with Confidence and ACID</a></p>
-<p><strong>TL;DR</strong>: 尽管OLAP系统作为none system of record，但change in datasets is inevitable.</p>
-<ul>
-<li>Concurrent Ingestion and Reporting. e.g. multiple connection</li>
-<li>Rolling Back Incorrect Transformations, e.g. deleting wrong data</li>
-<li>尽管可以re-import data，但事务的支持可以节省时间</li>
-<li>事务可以支持SQL assertion</li>
-</ul>
-<p>DuckDB passed all tests in TPC-H including the ACID. </p>
-<h3 id="duckdb的事务设计"><a class="header" href="#duckdb的事务设计">DuckDB的事务设计</a></h3>
-<p><a href="https://duckdb.org/2024/10/30/analytics-optimized-concurrent-transactions.html">Analytics-Optimized Concurrent Transactions</a></p>
-<ul>
-<li>key design: version加在bulk version粒度上, e.g. 2048 rows</li>
-</ul>
-<p><a href="https://tangdh.life/posts/database/duckdb-mvcc/">DuckDB MVCC的设计</a>: TODO</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="morsel-driven-parallelism"><a class="header" href="#morsel-driven-parallelism">Morsel-driven parallelism</a></h1>
-<blockquote>
-<p><a href="https://dl.acm.org/doi/10.1145/2588555.2610507">https://dl.acm.org/doi/10.1145/2588555.2610507</a></p>
-</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                                                    <a rel="next" href="benchmarks/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -250,6 +182,9 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                                    <a rel="next" href="benchmarks/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
@@ -272,11 +207,6 @@
 
         <!-- Custom JS scripts -->
         
-                        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-                
+        
     </body>
 </html>
