@@ -11,3 +11,5 @@
     - [Kuzu](./graph/kuzu.md)
 - [OLAP](./olap/README.md)
     - [Morsel-driven parallelism](./olap/morsel_driven_paral.md)
+- [AI Infra](./ai_infra/README.md)
+    - [Lotus, semantic engine](./ai_infra/lotus.md)
