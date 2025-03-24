@@ -10,6 +10,8 @@
     - [Graph Survey](./graph/graph_survey.md)
     - [DuckPGQ](./graph/DuckPGQ.md)
     - [Kuzu](./graph/kuzu.md)
+    - [Graph Storage](./graph/storage/README.md)
+        - [Revisiting the Design of In-Memory Dynamic Graph Storage](./graph/storage/dgs_survey.md)
 - [OLAP](./olap/README.md)
     - [Morsel-driven parallelism](./olap/morsel_driven_paral.md)
 - [AI Infra](./ai_infra/README.md)
