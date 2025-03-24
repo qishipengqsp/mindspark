@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Revisiting the Design of In-Memory Dynamic Graph Storage - mindspark</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../favicon.svg">
+                        <link rel="shortcut icon" href="../../favicon.png">
+                <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+                <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../how_to_read.html"><strong aria-hidden="true">1.</strong> 如何读论文</a></li><li class="chapter-item expanded "><a href="../../programming/index.html"><strong aria-hidden="true">2.</strong> Programming</a></li><li class="chapter-item expanded "><a href="../../benchmarks/index.html"><strong aria-hidden="true">3.</strong> Benchmark</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../benchmarks/snb-interactive.html"><strong aria-hidden="true">3.1.</strong> SNB Interactive</a></li><li class="chapter-item expanded "><a href="../../benchmarks/snb-bi.html"><strong aria-hidden="true">3.2.</strong> SNB BI</a></li><li class="chapter-item expanded "><a href="../../benchmarks/linkbench.html"><strong aria-hidden="true">3.3.</strong> LinkBench</a></li></ol></li><li class="chapter-item expanded "><a href="../../graph/index.html"><strong aria-hidden="true">4.</strong> Graph</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../graph/graph_survey.html"><strong aria-hidden="true">4.1.</strong> Graph Survey</a></li><li class="chapter-item expanded "><a href="../../graph/DuckPGQ.html"><strong aria-hidden="true">4.2.</strong> DuckPGQ</a></li><li class="chapter-item expanded "><a href="../../graph/kuzu.html"><strong aria-hidden="true">4.3.</strong> Kuzu</a></li><li class="chapter-item expanded "><a href="../../graph/storage/index.html"><strong aria-hidden="true">4.4.</strong> Graph Storage</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../graph/storage/dgs_survey.html" class="active"><strong aria-hidden="true">4.4.1.</strong> Revisiting the Design of In-Memory Dynamic Graph Storage</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../olap/index.html"><strong aria-hidden="true">5.</strong> OLAP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../olap/morsel_driven_paral.html"><strong aria-hidden="true">5.1.</strong> Morsel-driven parallelism</a></li></ol></li><li class="chapter-item expanded "><a href="../../ai_infra/index.html"><strong aria-hidden="true">6.</strong> AI Infra</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../ai_infra/lotus.html"><strong aria-hidden="true">6.1.</strong> Lotus, semantic engine</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">mindspark</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="revisiting-the-design-of-in-memory-dynamic-graph-storage"><a class="header" href="#revisiting-the-design-of-in-memory-dynamic-graph-storage">Revisiting the Design of In-Memory Dynamic Graph Storage</a></h1>
+<blockquote>
+<p>JIXIAN SU, ..., MINYI GUO
+https://arxiv.org/pdf/2502.10959</p>
+</blockquote>
+<p>评测Code: https://github.com/SJTU-Liquid/DynamicGraphStorage</p>
+<h2 id="摘要"><a class="header" href="#摘要">摘要</a></h2>
+<blockquote>
+<p>The effectiveness of in-memory dynamic graph storage (DGS) for supporting concurrent graph read and write queries is crucial for real-time graph analytics and updates. Various methods have been proposed, for example, LLAMA, Aspen, LiveGraph, Teseo, and Sortledton. These approaches differ significantly in their support for read and write operations, space overhead, and concurrency control. However, there has been no systematic study to explore the trade-offs among these dimensions. In this paper, we evaluate the effectiveness of individual techniques and identify the performance factors affecting these storage methods by proposing a common abstraction for DGS design and implementing a generic test framework based on this abstraction. Our findings highlight several key insights: 1) Existing DGS methods exhibit substantial space overhead. For example, Aspen consumes 3.3-10.8x more memory than CSR, while the optimal fine-grained methods consume 4.1-8.9x more memory than CSR, indicating a significant memory overhead. 2) Existing methods often overlook memory access impact of modern architectures, leading to performance degradation compared to continuous storage methods. 3) Fine-grained concurrency control methods, in particular, suffer from severe efficiency and space issues due to maintaining versions and performing checks for each neighbor. These methods also experience significant contention on high-degree vertices. Our systematic study reveals these performance bottlenecks and outlines future directions to improve DGS for real-time graph analytics.</p>
+</blockquote>
+<h2 id="主要贡献"><a class="header" href="#主要贡献">主要贡献</a></h2>
+<ul>
+<li>We propose a simple yet effective abstraction for DGS, enabling a systematic study of existing methods.</li>
+<li>Using this abstraction, we compare key techniques in DGS, e.g., graph containers and concurrency control.</li>
+<li>We develop a generic testing framework based on this abstraction to systematically evaluate existing methods.</li>
+<li>Our findings reveal the strengths of current approaches and highlight critical performance factors, providing valuable insights to guide the design of future DGS systems.</li>
+</ul>
+<h2 id="详细内容"><a class="header" href="#详细内容">详细内容</a></h2>
+<h3 id="dgs抽象"><a class="header" href="#dgs抽象">DGS抽象</a></h3>
+<p>图的数据结构表示
+<img src="./figures/dgs_data_structure.png" alt="" /></p>
+<p>graph query and data抽象
+<img src="./figures/graph_query_abstraction.png" alt="" /></p>
+<p>graph operations抽象
+<img src="./figures/graph_operation.png" alt="" /></p>
+<h3 id="不同dgs设计的比较"><a class="header" href="#不同dgs设计的比较">不同DGS设计的比较</a></h3>
+<p><img src="./figures/dgs_systems.png" alt="" /></p>
+<h3 id="评测框架"><a class="header" href="#评测框架">评测框架</a></h3>
+<p>TODO</p>
+<h3 id="结论"><a class="header" href="#结论">结论</a></h3>
+<p>性能对比:
+<img src="./figures/performances.png" alt="" /></p>
+<p>Key Technical Insights</p>
+<ul>
+<li>segmenting neighbor sets into blocks effectively balances read and write performance</li>
+<li>in the single update setting, fine-grained methods improve write throughput and outperform coarse-grained methods</li>
+<li>adaptive indexing significantly enhances performance by leveraging the sparsity of real-world graphs, reducing LLC misses</li>
+<li>converting tree indexes to arrays improves the performance of long-running queries in coarse-grained methods.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../graph/storage/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../olap/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../graph/storage/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../olap/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

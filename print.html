@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="how_to_read.html"><strong aria-hidden="true">1.</strong> 如何读论文</a></li><li class="chapter-item expanded "><a href="programming/index.html"><strong aria-hidden="true">2.</strong> Programming</a></li><li class="chapter-item expanded "><a href="benchmarks/index.html"><strong aria-hidden="true">3.</strong> Benchmark</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="benchmarks/snb-interactive.html"><strong aria-hidden="true">3.1.</strong> SNB Interactive</a></li><li class="chapter-item expanded "><a href="benchmarks/snb-bi.html"><strong aria-hidden="true">3.2.</strong> SNB BI</a></li><li class="chapter-item expanded "><a href="benchmarks/linkbench.html"><strong aria-hidden="true">3.3.</strong> LinkBench</a></li></ol></li><li class="chapter-item expanded "><a href="graph/index.html"><strong aria-hidden="true">4.</strong> Graph</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/graph_survey.html"><strong aria-hidden="true">4.1.</strong> Graph Survey</a></li><li class="chapter-item expanded "><a href="graph/DuckPGQ.html"><strong aria-hidden="true">4.2.</strong> DuckPGQ</a></li><li class="chapter-item expanded "><a href="graph/kuzu.html"><strong aria-hidden="true">4.3.</strong> Kuzu</a></li></ol></li><li class="chapter-item expanded "><a href="olap/index.html"><strong aria-hidden="true">5.</strong> OLAP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="olap/morsel_driven_paral.html"><strong aria-hidden="true">5.1.</strong> Morsel-driven parallelism</a></li></ol></li><li class="chapter-item expanded "><a href="ai_infra/index.html"><strong aria-hidden="true">6.</strong> AI Infra</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_infra/lotus.html"><strong aria-hidden="true">6.1.</strong> Lotus, semantic engine</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="how_to_read.html"><strong aria-hidden="true">1.</strong> 如何读论文</a></li><li class="chapter-item expanded "><a href="programming/index.html"><strong aria-hidden="true">2.</strong> Programming</a></li><li class="chapter-item expanded "><a href="benchmarks/index.html"><strong aria-hidden="true">3.</strong> Benchmark</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="benchmarks/snb-interactive.html"><strong aria-hidden="true">3.1.</strong> SNB Interactive</a></li><li class="chapter-item expanded "><a href="benchmarks/snb-bi.html"><strong aria-hidden="true">3.2.</strong> SNB BI</a></li><li class="chapter-item expanded "><a href="benchmarks/linkbench.html"><strong aria-hidden="true">3.3.</strong> LinkBench</a></li></ol></li><li class="chapter-item expanded "><a href="graph/index.html"><strong aria-hidden="true">4.</strong> Graph</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/graph_survey.html"><strong aria-hidden="true">4.1.</strong> Graph Survey</a></li><li class="chapter-item expanded "><a href="graph/DuckPGQ.html"><strong aria-hidden="true">4.2.</strong> DuckPGQ</a></li><li class="chapter-item expanded "><a href="graph/kuzu.html"><strong aria-hidden="true">4.3.</strong> Kuzu</a></li><li class="chapter-item expanded "><a href="graph/storage/index.html"><strong aria-hidden="true">4.4.</strong> Graph Storage</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/storage/dgs_survey.html"><strong aria-hidden="true">4.4.1.</strong> Revisiting the Design of In-Memory Dynamic Graph Storage</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="olap/index.html"><strong aria-hidden="true">5.</strong> OLAP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="olap/morsel_driven_paral.html"><strong aria-hidden="true">5.1.</strong> Morsel-driven parallelism</a></li></ol></li><li class="chapter-item expanded "><a href="ai_infra/index.html"><strong aria-hidden="true">6.</strong> AI Infra</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ai_infra/lotus.html"><strong aria-hidden="true">6.1.</strong> Lotus, semantic engine</a></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -210,6 +210,7 @@
 <li><a href="graph/./graph_survey.html">Graph Survey</a></li>
 <li><a href="graph/./DuckPGQ.html">DuckPGQ</a></li>
 <li><a href="graph/./kuzu.html">Kuzu</a></li>
+<li><a href="graph/./storage/">Graph Storage</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="graph-survey"><a class="header" href="#graph-survey">Graph Survey</a></h1>
 <blockquote>
@@ -226,6 +227,58 @@
 <p>https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf</p>
 </blockquote>
 <p>TODO</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="graph-storage"><a class="header" href="#graph-storage">Graph Storage</a></h1>
+<h1 id="todo"><a class="header" href="#todo">TODO</a></h1>
+<ul>
+<li><a href="https://www.sciopen.com/article/pdf/10.26599/BDMA.2023.9020015.pdf?ifPreview=0">Building a High-Performance Graph Storage on Top ofTree-Structured Key-Value Stores</a></li>
+<li><a href="https://www.usenix.org/system/files/atc23-shen.pdf">Bridging the Gap between Relational OLTP and Graph-based OLAP</a></li>
+<li><a href="https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf">Columnar Storage and List-based Processing for Graph Database Management Systems</a></li>
+<li><a href="https://www.vldb.org/pvldb/vol15/p1173-fuchs.pdf">Sortledton: a Universal, Transactional Graph Data Structure</a></li>
+<li><a href="https://arxiv.org/abs/2411.06392v2">LSMGraph: A High-Performance Dynamic Graph Storage System with Multi-Level CSR</a></li>
+<li><a href="https://arxiv.org/pdf/2312.14396">GastCoCo: Graph Storage and Coroutine-Based Prefetch Co-Design for Dynamic Graph
+Processing</a></li>
+<li><a href="https://vldb.org/pvldb/vol14/p1053-leo.pdf">Teseo and the Analysis of Structural Dynamic Graphs</a></li>
+<li><a href="https://random-shite.content.as207960.net/3639282.pdf">Spruce: A Fast yet Space-saving Structure for Dynamic GraphStorage</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="revisiting-the-design-of-in-memory-dynamic-graph-storage"><a class="header" href="#revisiting-the-design-of-in-memory-dynamic-graph-storage">Revisiting the Design of In-Memory Dynamic Graph Storage</a></h1>
+<blockquote>
+<p>JIXIAN SU, ..., MINYI GUO
+https://arxiv.org/pdf/2502.10959</p>
+</blockquote>
+<p>评测Code: https://github.com/SJTU-Liquid/DynamicGraphStorage</p>
+<h2 id="摘要"><a class="header" href="#摘要">摘要</a></h2>
+<blockquote>
+<p>The effectiveness of in-memory dynamic graph storage (DGS) for supporting concurrent graph read and write queries is crucial for real-time graph analytics and updates. Various methods have been proposed, for example, LLAMA, Aspen, LiveGraph, Teseo, and Sortledton. These approaches differ significantly in their support for read and write operations, space overhead, and concurrency control. However, there has been no systematic study to explore the trade-offs among these dimensions. In this paper, we evaluate the effectiveness of individual techniques and identify the performance factors affecting these storage methods by proposing a common abstraction for DGS design and implementing a generic test framework based on this abstraction. Our findings highlight several key insights: 1) Existing DGS methods exhibit substantial space overhead. For example, Aspen consumes 3.3-10.8x more memory than CSR, while the optimal fine-grained methods consume 4.1-8.9x more memory than CSR, indicating a significant memory overhead. 2) Existing methods often overlook memory access impact of modern architectures, leading to performance degradation compared to continuous storage methods. 3) Fine-grained concurrency control methods, in particular, suffer from severe efficiency and space issues due to maintaining versions and performing checks for each neighbor. These methods also experience significant contention on high-degree vertices. Our systematic study reveals these performance bottlenecks and outlines future directions to improve DGS for real-time graph analytics.</p>
+</blockquote>
+<h2 id="主要贡献"><a class="header" href="#主要贡献">主要贡献</a></h2>
+<ul>
+<li>We propose a simple yet effective abstraction for DGS, enabling a systematic study of existing methods.</li>
+<li>Using this abstraction, we compare key techniques in DGS, e.g., graph containers and concurrency control.</li>
+<li>We develop a generic testing framework based on this abstraction to systematically evaluate existing methods.</li>
+<li>Our findings reveal the strengths of current approaches and highlight critical performance factors, providing valuable insights to guide the design of future DGS systems.</li>
+</ul>
+<h2 id="详细内容"><a class="header" href="#详细内容">详细内容</a></h2>
+<h3 id="dgs抽象"><a class="header" href="#dgs抽象">DGS抽象</a></h3>
+<p>图的数据结构表示
+<img src="graph/storage/./figures/dgs_data_structure.png" alt="" /></p>
+<p>graph query and data抽象
+<img src="graph/storage/./figures/graph_query_abstraction.png" alt="" /></p>
+<p>graph operations抽象
+<img src="graph/storage/./figures/graph_operation.png" alt="" /></p>
+<h3 id="不同dgs设计的比较"><a class="header" href="#不同dgs设计的比较">不同DGS设计的比较</a></h3>
+<p><img src="graph/storage/./figures/dgs_systems.png" alt="" /></p>
+<h3 id="评测框架"><a class="header" href="#评测框架">评测框架</a></h3>
+<p>TODO</p>
+<h3 id="结论"><a class="header" href="#结论">结论</a></h3>
+<p>性能对比:
+<img src="graph/storage/./figures/performances.png" alt="" /></p>
+<p>Key Technical Insights</p>
+<ul>
+<li>segmenting neighbor sets into blocks effectively balances read and write performance</li>
+<li>in the single update setting, fine-grained methods improve write throughput and outperform coarse-grained methods</li>
+<li>adaptive indexing significantly enhances performance by leveraging the sparsity of real-world graphs, reducing LLC misses</li>
+<li>converting tree indexes to arrays improves the performance of long-running queries in coarse-grained methods.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="olap类论文"><a class="header" href="#olap类论文">OLAP类论文</a></h1>
 <ul>
 <li><a href="olap/./morsel_driven_paral.html">Morsel-driven parallelism</a></li>
