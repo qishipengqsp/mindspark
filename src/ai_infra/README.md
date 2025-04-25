@@ -1,3 +1,3 @@
 # AI Infra
 
-- [Lotus, semantic engine](./ai_infra/lotus.md)
+- [Lotus, semantic engine](./lotus.md)

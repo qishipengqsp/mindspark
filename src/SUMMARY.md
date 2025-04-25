@@ -14,5 +14,7 @@
         - [Revisiting the Design of In-Memory Dynamic Graph Storage](./graph/storage/dgs_survey.md)
 - [OLAP](./olap/README.md)
     - [Morsel-driven parallelism](./olap/morsel_driven_paral.md)
+- [MVCC](./mvcc/README.md)
+    - [Fast Serializable Multi-Version Concurrency Control for Main-Memory Database Systems](./mvcc/mvcc.md)
 - [AI Infra](./ai_infra/README.md)
     - [Lotus, semantic engine](./ai_infra/lotus.md)
