@@ -1,6 +1,3 @@
 # Graph
 
-- [Graph Survey](./graph_survey.md)
-- [DuckPGQ](./DuckPGQ.md)
-- [Kuzu](./kuzu.md)
-- [Graph Storage](./storage/)
+这是Graph的Sub directory
