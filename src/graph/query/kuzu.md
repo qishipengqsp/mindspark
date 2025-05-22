@@ -1,6 +1,7 @@
 # KUZU Graph Database Management System
 
 > https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf
+> https://vldb.org/cidrdb/papers/2025/p21-gro.pdf
 
 ## Factorization-based Query Processing
 
